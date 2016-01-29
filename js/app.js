@@ -1,8 +1,9 @@
 var app = angular.module("movieApp", ["ngRoute"]);
 
 app.config(function($routeProvider, $locationProvider) {
-	$routeProvider.when('/', {
-		templateUrl: "",
+	$routeProvider
+	.when('/', {
+		templateUrl: "partials/blank.html",
 		controller: "Search"
 	}).when('/search/:query', {
 		templateUrl: "partials/search.html",
@@ -13,6 +14,4 @@ app.config(function($routeProvider, $locationProvider) {
 	}).otherwise({
 		redirectTo: "/"
 	})
-
-	$locationProvider.html5Mode(true);
 })

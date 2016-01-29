@@ -1,7 +1,7 @@
 var app = angular.module("movieApp", ["ngRoute"]);
 
 app.config(function($routeProvider, $locationProvider) {
-	$routeProvider.when('/', {
+	$routeProvider.when('/#/', {
 		templateUrl: "",
 		controller: "Search"
 	}).when('/search/:query', {
@@ -12,7 +12,5 @@ app.config(function($routeProvider, $locationProvider) {
 		controller: "Movie"
 	}).otherwise({
 		redirectTo: "/"
-	})
-
-	$locationProvider.html5Mode(true);
-})
+	});
+});

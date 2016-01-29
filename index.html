@@ -7,15 +7,14 @@
 </head>
 <body>
 ​	<header>
-	<h1>omdb Movie App</h1>
+		<h1>omdb Movie App</h1>
 	<br>
-	<form ng-controller="Search">
+		<form ng-controller="Search">
 			<label>Search</label>
 			<input ng-model="query" type="text" ng-init="query='asdf'">
-			<a href="/#/search/{{query}}"><button>Search</button></a>
+			<button ng-click="performSearch(query)">Search</button>
 			<p>/search/{{query}}</p>
 		</form>
-
 	</header>
 		<div class="view" ng-view>
 	​

@@ -1,1 +1,7 @@
-<h1><a href="/#/movie/asdf">Sample Movie</a></h1>
+<div class="item" ng-repeat="movie in movies">
+	 <div  ng-click="movieRedirect(movie.imdbID)">
+	 	<img src="{{movie.Poster}}">
+		<h1>{{movie.Title}}</h1>
+		<h3>{{movie.imdbID}}</h3>
+	</div>
+</div>

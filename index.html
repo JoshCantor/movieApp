@@ -11,7 +11,7 @@
 	<br>
 		<form ng-controller="Search">
 			<label>Search</label>
-			<input ng-model="query" type="text" ng-init="query='asdf'">
+			<input ng-model="query" type="text" placeholder="Movie Name">
 			<button ng-click="performSearch(query)">Search</button>
 			<p>/search/{{query}}</p>
 		</form>

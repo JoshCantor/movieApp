@@ -1,7 +1,10 @@
-app.controller("Search", function($scope, $routeParams, $http) {
-	$scope.message= "search";
+app.controller("Search", function($scope, $rootScope, $routeParams, $http, $location) {
+	debugger;
+	$scope.movies = $rootScope.movies;
+	$rootScope.query = $scope.query; 
+
 	$scope.performSearch = function (query) {
-		var searchUrl = "http://www.omdbapi.com/?s=" + $scope.query;
+		var searchUrl = "http://www.omdbapi.com/?s=" + query;
 
 		var omdbQueryRequest = $http({
 			method: "GET",
@@ -9,11 +12,22 @@ app.controller("Search", function($scope, $routeParams, $http) {
 		});
 
 		omdbQueryRequest.then(function(data) {
-			console.log(data);
+			$rootScope.movies = data.data.Search;
+			$location.path('search');
+			$location.search({ search: query });
+
+			debugger;
 		})
+	}
+
+	$scope.movieRedirect = function(id) {
+		$location.path('/movie/' + id);
+
 	}
 });
 
-app.controller("Movie", function($scope, $routeParams) {
-	console.log("Movie");
+app.controller("Movie", function($scope, $routeParams, $rootScope, $location) {
+	$scope.movieBack = function(query) {
+		$location.path('/search/' + query);
+	}
 });

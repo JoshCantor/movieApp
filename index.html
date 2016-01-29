@@ -3,22 +3,26 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Movie App</title>
-	<base href="/">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-​
-<h1>header</h1>
+​	<header>
+	<h1>omdb Movie App</h1>
+	<br>
 	<form ng-controller="Search">
-		<label>Search</label>
-		<input ng-model="query" type="text">
-		<a href="/search/{{query}}"><button>Search</button></a>
-	</form>
-<div ng-view>
-​
-</div>
+			<label>Search</label>
+			<input ng-model="query" type="text" ng-init="query='asdf'">
+			<a href="/#/search/{{query}}"><button>Search</button></a>
+			<p>/search/{{query}}</p>
+		</form>
+
+	</header>
+		<div ng-view>
+	​
+		</div>
 	<script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js'></script>
 	<script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js'></script>
 	<script src="js/app.js"></script>
-	<script src="js/controllers.js"></script>
+	<script src="js/controller.js"></script>
 </body>
 </html>

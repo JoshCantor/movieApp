@@ -1,7 +1,5 @@
 app.controller("Search", function($scope, $routeParams) {
-	$scope.movieSearch = function(query) {
-		("search/:query");
-	}
+	$scope.message= "search";
 });
 
 app.controller("Movie", function($scope, $routeParams) {

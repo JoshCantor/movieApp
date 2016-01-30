@@ -13,7 +13,7 @@ app.controller("Search", function($scope, $rootScope, $routeParams, $http, $loca
 		omdbQueryRequest.then(function(data) {
 			var rawData = data.data.Search;
 			rawData.forEach(function(movie) {
-				if(movie.Poster === undefined) {
+				if(movie.Poster === "N/A") {
 					movie.Poster = "http://cdn.browshot.com/static/images/not-found.png"
 				}
 			});

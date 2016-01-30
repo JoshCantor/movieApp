@@ -1,5 +1,4 @@
 app.controller("Search", function($scope, $rootScope, $routeParams, $http, $location) {
-	debugger;
 	$scope.movies = $rootScope.movies;
 	$rootScope.query = $scope.query; 
 
@@ -15,8 +14,6 @@ app.controller("Search", function($scope, $rootScope, $routeParams, $http, $loca
 			$rootScope.movies = data.data.Search;
 			$location.path('search');
 			$location.search({ search: query });
-
-			debugger;
 		})
 	}
 
@@ -27,7 +24,9 @@ app.controller("Search", function($scope, $rootScope, $routeParams, $http, $loca
 });
 
 app.controller("Movie", function($scope, $routeParams, $rootScope, $location) {
-	$scope.movieBack = function(query) {
-		$location.path('/search/' + query);
+	$scope.movieBack = function() {
+		debugger;
+		$location.path("search");
+		$location.search({ search: $routeParams.search });
 	}
 });

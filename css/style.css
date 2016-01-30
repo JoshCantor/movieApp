@@ -8,7 +8,7 @@ html, body {
 }
 
 body {
-	padding-top: 175px;
+	padding-top: 138px;
 }
 
 header{
@@ -21,6 +21,7 @@ header{
 	background-color: white;
 	border-bottom: 1px solid gray;
 	z-index: 1;
+	padding-bottom: 32px;
 }
 
 .view {

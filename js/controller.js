@@ -11,7 +11,14 @@ app.controller("Search", function($scope, $rootScope, $routeParams, $http, $loca
 		});
 
 		omdbQueryRequest.then(function(data) {
-			$rootScope.movies = data.data.Search;
+			var rawData = data.data.Search;
+			rawData.forEach(function(movie) {
+				if(movie.Poster === undefined) {
+					movie.Poster = "http://cdn.browshot.com/static/images/not-found.png"
+				}
+			});
+			debugger;
+			$rootScope.movies = rawData;
 			$location.path('search');
 			$location.search({ search: query });
 		})
@@ -25,7 +32,6 @@ app.controller("Search", function($scope, $rootScope, $routeParams, $http, $loca
 
 app.controller("Movie", function($scope, $routeParams, $rootScope, $location) {
 	$scope.movieBack = function() {
-		debugger;
 		$location.path("search");
 		$location.search({ search: $routeParams.search });
 	}

@@ -1,9 +1,17 @@
-movieApp.factory("searchBar", function() {
+angular.module("movieApp").factory("searchBar", function() {
 	var search = {};
 
-	search.query = function(query) {
-		return query;
+	search.setQuery = function(query) {;
+		search.query = query;
 	}
+
+	search.query = "";
+
+	search.setMovies = function(movies) {
+		search.movieList = movies;
+	}
+
+	search.movieList = [];
 
 	return search;
 });

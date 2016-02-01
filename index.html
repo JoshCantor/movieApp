@@ -4,23 +4,25 @@
 	<meta charset="UTF-8">
 	<title>Movie App</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 <body>
 ​	<header>
 		<h1>omdb Movie App</h1>
 	<br>
 		<form ng-controller="Search">
-			<label>Search</label>
+			<label>Search: </label>
 			<input ng-model="query" type="text" placeholder="Movie Name">
 			<button ng-click="performSearch(query)">Search</button>
 		</form>
 	</header>
-		<div class="view" ng-view>
+		<div ng-view>
 	​
 		</div>
 	<script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js'></script>
 	<script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js'></script>
-	<script src="js/app.js"></script>
-	<script src="js/controller.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/controller.js"></script>
+	<script type="text/javascript" src="js/services/search.js"></script>
 </body>
 </html>

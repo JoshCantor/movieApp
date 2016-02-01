@@ -8,7 +8,8 @@ html, body {
 }
 
 body {
-	padding-top: 138px;
+	padding-top: 130px;
+	min-width: 1000px;
 }
 
 header{
@@ -25,13 +26,61 @@ header{
 }
 
 .view {
-	position: relative;
 	border: 1px solid black;
 	border-radius: 5px;
 	background-color: white;
+	height: 200px;
+	margin-top: 10px;
+	margin-left: 20px;
+	margin-right: 10px;
+	max-width: 500px;
+	min-width: 400px;
+	padding: 5px;
+	overflow: hidden;
 }
 
-.item{ 
-	border:1px solid black;
-	z-index: 2;
+
+.img {
+	width: 20%;
+	min-width: 100px;
+	height: 141px;
+	float: left;
+	margin: 5px;
+}
+
+.title {
+	width: 60%;
+	float: left;
+	margin: 5px;
+	word-wrap: break-word;
+}
+
+.movie {
+	border: 1px solid black;
+	border-radius: 5px;
+	background-color: white;
+	word-wrap:break-word;
+	margin-top: 15px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.movieImg {
+	text-align: center;
+	width: 100%;
+	max-width: 325px;
+	height: auto;
+}
+
+.wrapper {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+body > div > div > div > div:nth-child(3) > div.col-xs-8 > p {
+	color: grey;
+}
+
+body > div > div > div > div:nth-child(3) > div.col-xs-8 > p:nth-child(2) {
+	color: black;
 }

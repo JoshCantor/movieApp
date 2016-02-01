@@ -1,9 +1,51 @@
-<h1><a ng-click="movieBack()">Back</a></h1>
-
-<p>Sample Data</p>
-<p>Sample Data</p>
-<p>Sample Data</p>
-<p>Sample Data</p>
-<p>Sample Data</p>
-<p>Sample Data</p>
-<p>Sample Data</p>
+<div class="container-fluid">	
+	<div class="col-xs-10 col-xs-offset-1 movie">
+		<div class="row">
+			<div class="col-xs-12">
+				<h1><a ng-click="movieBack()">Back</a></h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<h1>{{movie.Title}}</h1>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-xs-4">
+				<img class="movieImg" ng-src="{{movie.Poster}}">
+			</div>
+			<div class="col-xs-8">
+				<p><b>Starring: </b> {{movie.Actors}}</p>
+				<p>{{movie.Plot}}</p>
+				<h3><b>Additional Details</b></h3>
+				<h4>Awards</h4>
+				<p>{{movie.Awards}}</p>
+				<h4>Country</h4>
+				<p>{{movie.Country}}</p>
+				<h4>Director</h4>
+				<p>{{movie.Director}}</p>
+				<h4>Genre</h4>
+				<p>{{movie.Genre}}</p>
+				<h4>Language</h4>
+				<p>{{movie.Language}}</p>
+				<h4>Metascore</h4>
+				<p>{{movie.Metascore}}</p>
+				<h4>Rated</h4>
+				<p>{{movie.Rated}}</p>
+				<h4>Released</h4>
+				<p>{{movie.Released}}</p>
+				<h4>Runtime</h4>
+				<p>{{movie.Runtime}}</p>
+				<h4>Title</h4>
+				<p>{{movie.Title}}</p>
+				<h4>Writer</h4>
+				<p>{{movie.Writer}}</p>
+				<h4>Year</h4>
+				<p>{{movie.Year}}</p>
+				<h4>IMDb Rating</h4>
+				<p>{{movie.imdbRating}}</p>
+			</div>
+		</div>
+	</div>
+</div>

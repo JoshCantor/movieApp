@@ -1,10 +1,17 @@
-<div class="item" ng-repeat="movie in movies">
-	 <div  ng-click="movieRedirect(movie.imdbID)">
-	 	<div>
-	 		<img ng-src="{{movie.Poster}}">
-	 	</div>
-	 	<div>
-			<h1>{{movie.Title}}</h1>
+<div class="container wrapper">
+	<div class="item" ng-repeat="movie in searchBar.movieList">
+		 <div class="col-md-6 view" ng-click="movieRedirect(movie.imdbID)">
+		 	<div>
+		 		<img class="img" ng-src="{{movie.Poster}}">
+		 	</div>
+		 	<div class='title'>
+				<div><h2>{{movie.Title}}</h2></div>
+				<div><h3>{{movie.Year}}</h3></div>
+			</div>
+		</div>
+
+		<div class="clear">
+			
 		</div>
 	</div>
 </div>

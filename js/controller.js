@@ -1,8 +1,8 @@
-app.controller("Search", function($scope, $rootScope, $routeParams, $http, $location) {
-	$scope.movies = $rootScope.movies;
-	$rootScope.query = $scope.query; 
-
+app.controller("Search", function($scope, $routeParams, $http, $location, searchBar) {
+	$scope.searchBar = searchBar;
+	
 	$scope.performSearch = function (query) {
+		searchBar.setQuery($scope.query);
 		var searchUrl = "http://www.omdbapi.com/?s=" + query;
 
 		var omdbQueryRequest = $http({
@@ -17,8 +17,8 @@ app.controller("Search", function($scope, $rootScope, $routeParams, $http, $loca
 					movie.Poster = "http://cdn.browshot.com/static/images/not-found.png"
 				}
 			});
-			debugger;
-			$rootScope.movies = rawData;
+
+			searchBar.setMovies(rawData);
 			$location.path('search');
 			$location.search({ search: query });
 		})
@@ -26,13 +26,37 @@ app.controller("Search", function($scope, $rootScope, $routeParams, $http, $loca
 
 	$scope.movieRedirect = function(id) {
 		$location.path('/movie/' + id);
+		$location.search({});
 
 	}
 });
 
-app.controller("Movie", function($scope, $routeParams, $rootScope, $location) {
+app.controller("Movie", function($scope, $routeParams, $location, searchBar, $http) {
+
+	$scope.searchBar = searchBar;
 	$scope.movieBack = function() {
 		$location.path("search");
-		$location.search({ search: $routeParams.search });
+		$location.search({ search: searchBar.query });
 	}
+
+	function getMovieData(id) {
+		var movieUrl = "http://www.omdbapi.com/?i=" + id;
+
+		var omdbMovieRequest = $http({
+			method: "GET",
+			url: movieUrl
+		});
+
+		omdbMovieRequest.then(function(movieData) {
+			$scope.movie = movieData.data;
+			console.log($scope.movie);
+			if ($scope.movie.Poster === "N/A") {
+				$scope.movie.Poster = "http://cdn.browshot.com/static/images/not-found.png"; 
+			}
+		});
+	}
+
+
+	getMovieData($routeParams.id)
+
 });

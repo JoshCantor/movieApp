@@ -1,7 +1,7 @@
 <div class="item" ng-repeat="movie in movies">
 	 <div  ng-click="movieRedirect(movie.imdbID)">
 	 	<div>
-	 		<img src="{{movie.Poster}}">
+	 		<img ng-src="{{movie.Poster}}">
 	 	</div>
 	 	<div>
 			<h1>{{movie.Title}}</h1>
